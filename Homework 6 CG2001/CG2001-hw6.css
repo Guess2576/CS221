@@ -1,0 +1,75 @@
+
+
+body {
+    background-color: black;
+}
+
+
+/* resources used in learning how to style flexboxes: https://stackoverflow.com/questions/19026884/flexbox-center-horizontally-and-vertically/33049198#33049198
+                                                      https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container
+                                                      https://css-tricks.com/almanac/properties/b/border-radius/#:~:text=You%20can%20give%20any%20element,than%20the%20element%20it's%20above.
+*/
+
+/* Flex container styles */
+.flex-container {
+    display: flex;          /*make it a flex container*/
+    flex-wrap: wrap;        /* make cells stack on one another*/
+    justify-content: center; /* align container to center*/
+    align-items: center;    /* align container to center*/
+    height: 100vh;          /* full viewport height */
+}
+
+/* Style of the grid cells */
+.grid-cell {
+    flex: 0 0 calc(33.33% - 20px); /* 33.33% width for each cell with some margin */
+    margin: 20px;                  /* Gutter*/
+    display: flex;
+    align-items: center;           /* align cells to center*/
+    justify-content: center;       /* align cells to center*/
+    color: #000000;
+    font-size: 24px; 
+    text-align: center;            /* Center the label text */
+    border: 1px solid black;     /* border for each cell */
+    aspect-ratio: 1;               /* make sure each cell is evenly sized */
+    border-radius: 5%;
+}
+
+
+/* styles for each individual grid cell                     using nth-child: https://css-tricks.com/almanac/selectors/n/nth-child/  */
+
+.grid-cell:nth-child(1) {
+    background-color: #3498db; /* 6.66 contrast */
+}
+
+.grid-cell:nth-child(2) {
+    background-color: #e74c3c; /*5.49 contrast*/
+}
+
+.grid-cell:nth-child(3) {
+    background-color: #27ae60; /*7.3 contrast */
+}
+
+.grid-cell:nth-child(4) {
+    background-color: #f39c12; /* 9.57 contrast */
+    flex: 0 0 100%;
+}
+
+.grid-cell:nth-child(5) {
+    background-color: #9b59b6; /* 4.49 contrast */
+}
+
+.grid-cell:nth-child(6) {
+    background-color: #f03ad1; /* 6.23 contrast */
+}
+
+.grid-cell:nth-child(7) {
+    background-color: #1abc9c; /*8.71 contrast  */
+}
+
+.grid-cell:nth-child(8) {
+    background-color: #e67e22; /* 7.37 contrast */
+}
+
+.grid-cell:nth-child(9) {
+    background-color: #95a5a6; /* 8.32 contrast */
+}
