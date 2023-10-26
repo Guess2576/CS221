@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #303030;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function gradeBasedTreats() {
+
+            // Use the prompt function to ask the user to enter a numeric grade value (e.g., 95). (20%)
+            let grade = prompt("Enter the student's numeric grade: ");
+
+            // Convert user input to a grade number value
+            grade = parseFloat(grade);
+
+            // Bonus: checking if the grade entered is a valid number. Learned from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+            if (isNaN(grade)) {
+                console.error("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            // Convert the numeric grade into a letter grade (30%)      Reviewed this page for assistance. https://stackoverflow.com/questions/52124041/converting-number-grade-to-letter-grade-issue-with-displaying-grade 
+            let letterGrade;
+            if (grade >= 90 && grade <= 100) {
+                letterGrade = "A";
+            } else if (grade >= 80 && grade < 90) {
+                letterGrade = "B";
+            } else if (grade >= 70 && grade < 80) {
+                letterGrade = "C";
+            } else if (grade >= 60 && grade < 70) {
+                letterGrade = "D";
+            } else {
+                letterGrade = "F";
+            }
+
+            // Use a switch  or if/else statement to determine the treat the student receives based on their grade letter: (40%)
+            let reward;
+            switch (letterGrade) {
+                case "A":
+                    reward = "Candy";
+                    break;
+                case "B":
+                    reward = "Apple";
+                    break;
+                case "C":
+                    reward = "Mint";
+                    break;
+                case "D":
+                    reward = "Pencil";
+                    break;
+                case "F":
+                    reward = "Awkward conversation with parents";
+                    break;
+            }
+
+            // Display the student's grade, grade letter, and the corresponding treat in the console. (10%)
+            console.log("Enter the student's numeric grade:" + grade);
+            console.log("Grade: " + grade);
+            console.log("Letter Grade: " + letterGrade);
+            console.log("Reward: " + reward);
+        }
+
+        // call the function
+        gradeBasedTreats();
+    </script>
+</body>
+</html>
